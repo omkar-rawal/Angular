@@ -1,0 +1,18 @@
+import { Component, VERSION } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  name = 'Angular ' + VERSION.major;
+  name1: string = '';
+  name11(event){
+    this.name1 = (event.target as HTMLInputElement).value;
+  }
+}
+
+
+<input [value]="name1"  (input)="name11($event)"/>
+<h1>hello {{name1}}</h1>
